@@ -1,0 +1,179 @@
+:root {
+  --main-bg-color: #1f283e;
+}
+
+/* Datatable */
+table.dataTable{
+  color: white !important;
+}
+
+table.dataTable tbody tr{
+  background-color:#1f283e;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+  color: #ccc;
+}
+/* Datatable */
+
+.card-header{
+  background-color: #ccc;
+}
+
+.collapse{
+  background-color: var(--main-bg-color);
+}
+.modal-content{
+  background: var(--main-bg-color);
+}
+
+#content{
+  background: var(--main-bg-color);
+}
+
+.border {
+  border: 1px solid #ccc !important;
+}
+
+hr {
+  border: 1px solid #ccc !important;
+}
+
+/* INPUT SWITCH */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 49px;
+  height: 21px;
+  margin-top: 4px;
+  float: right;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* INPUT SWITCH */
+
+body { 
+  overflow-x: hidden; 
+  color: white;
+}
+
+/*CSS PARA MENU LATERAL*/
+#sidebar {
+	min-width: 250px;
+	max-width: 250px;
+	background: #1f283e;
+    opacity: .94;
+	color: #ccc;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s; 
+}
+
+#sidebar.active {
+    margin-left: -250px; 
+} 
+
+#sidebar ul li a i{
+  margin-left: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px 0;
+    display: block;
+    color: rgba(255, 255, 255, 0.8);	    
+}
+
+#sidebar ul li a:hover {
+  border-radius: 10px;
+  background-color: #aaa;
+}
+
+#sidebar ul li a span{
+  margin-left: 10px;
+}
+     
+a[data-toggle="collapse"] {
+  position: relative; 
+}
+
+#sidebar ul li ul li a{
+  margin-left: 25px;
+  padding-left: 10px;
+}
+#sidebar ul li a{  
+  text-decoration: none;
+}
+
+.sair{
+    width: 210px;      
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+#content {  
+  padding: 0;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; 
+}
+/*CSS PARA MENU LATERAL*/
