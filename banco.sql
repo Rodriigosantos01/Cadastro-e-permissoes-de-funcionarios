@@ -12,7 +12,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Copiando estrutura para tabela sistema.empresas
-DROP TABLE IF EXISTS `empresas`;
 CREATE TABLE IF NOT EXISTS `empresas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(150) NOT NULL DEFAULT '0',
@@ -32,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `empresas` (
 -- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela sistema.permissoes
-DROP TABLE IF EXISTS `permissoes`;
 CREATE TABLE IF NOT EXISTS `permissoes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_empresa` int(11) NOT NULL DEFAULT 0,
@@ -54,8 +52,19 @@ CREATE TABLE IF NOT EXISTS `permissoes` (
 
 -- Exportação de dados foi desmarcado.
 
+-- Copiando estrutura para tabela sistema.tbl_enviar_email
+CREATE TABLE IF NOT EXISTS `tbl_enviar_email` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(250) NOT NULL DEFAULT '0' COMMENT 'email que vai ser enviado a mensagem',
+  `tipo` int(11) NOT NULL COMMENT '1=Novo cadastro, 2=recuperar senha',
+  `data_adicionado` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_enviado` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- Exportação de dados foi desmarcado.
+
 -- Copiando estrutura para tabela sistema.usuarios
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_empresa` int(11) NOT NULL DEFAULT 0 COMMENT 'id da empresa vinculada',
@@ -77,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_status` int(11) NOT NULL DEFAULT 1 COMMENT '1=ativo, 2=inativo, 3=deletado',
   `id_user_del` int(11) NOT NULL DEFAULT 0 COMMENT 'id de quem deletou',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 

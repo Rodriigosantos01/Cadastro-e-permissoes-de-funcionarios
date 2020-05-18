@@ -3,6 +3,7 @@
     require "../../autoload.php";
 
     use App\Funcionario;
+    use App\Enviandoemail;
     
     if(isset($_POST)){
         $erro=0;
@@ -10,7 +11,8 @@
         $id_permissao = $_POST['id_permissao'];
         $nome = $_POST["nome"];        
         $email = $_POST["email"];        
-        $senha = password_hash(gerar_senha(10, true, true, true, true), PASSWORD_BCRYPT);
+        //$senha = password_hash(gerar_senha(10, true, true, true, true), PASSWORD_BCRYPT);
+        $senha = 'GerarSenhaAoEviarEmail';
         $cpf_cnpj = $_POST["cpf_cnpj"];        
         $cep = $_POST["cep"];        
         $endereco = $_POST["endereco"];        
@@ -37,7 +39,11 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    ';     
+                    ';
+                    
+                    $EnviarEmail = new Enviandoemail();
+                    $tipo = 1;//Cadastro
+                    $rsEmail = $EnviarEmail->insert($email, $tipo);                    
                 }else{
                     $msg = '
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
