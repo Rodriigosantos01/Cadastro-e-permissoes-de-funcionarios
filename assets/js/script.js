@@ -16,3 +16,18 @@ $("#formLogin").submit(function(e){
         }
     })
 });
+
+$("#formRecuperarSenha").submit(function(e){
+    e.preventDefault();
+    
+    $.ajax({
+        url: 'inc/recuperarSenha.php',
+        method: 'POST',
+        data: $(this).serialize(),
+        success:function(data){
+            $("#msgLogin").html(data);
+            $("#modalRecuperarSenha").modal('hide');
+            $("#formRecuperarSenha")[0].reset();
+        }
+    })
+});

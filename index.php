@@ -11,7 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./assets/framework/bootstrap.min.css">
     <link href="./assets/framework/font-awesome/css/all.min.css" rel="stylesheet">
-    <title>Home</title>    
+    <title>Home</title> 
+    <style>
+        .modal-header, .modal-body, .modal-footer {
+            background: #1f283e;
+        }    
+    </style>   
 </head>
 <body style="background: #1f283e; color: white;">
     <div class="container">
@@ -30,7 +35,11 @@
 
                             <label for="senha">Senha</label>
                             <input class="form-control" type="password" name="senha" id="senha" required>
-
+                            <div class="text-right">
+                                <a href="#" class="small" data-toggle="modal" data-target="#modalRecuperarSenha">
+                                    Esqueci minha senha
+                                </a>
+                            </div>
                             <div class="mt-4" id="msgLogin"></div> 
 
                             <button class="btn btn-primary btn-block mt-3 mb-3">Continuar</button>
@@ -86,7 +95,34 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>   
+    <!-- Modal para recuperar senha -->
+    <div class="modal fade" id="modalRecuperarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        Recuperar senha
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="formRecuperarSenha">
+                    <div class="modal-body">
+                        <label class="col-md-12" id="msgEditDescricaoPermissaoModal">
+                        </label>
+                        E-mail:
+                        <input class="form-control" type="email" name="email" required>                        
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-secondary" data-dismiss="modal">Fechar</a>
+                        <button class="btn btn-primary">Sim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
     <script src="./assets/framework/jquery-3.5.1.min.js"></script>    
     <script src="./assets/framework/bootstrap.min.js"></script>
     <script src="./assets/js/script.js"></script>
