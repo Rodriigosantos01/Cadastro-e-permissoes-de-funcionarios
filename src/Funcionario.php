@@ -138,5 +138,20 @@
                 throw $ex;
             }
         }
+
+        function updateSenha(string $senha, string $email)
+        {
+            try {
+                $newSenha = password_hash($senha, PASSWORD_BCRYPT);
+                (String) $sql = "UPDATE usuarios set senha=:senha WHERE email=:email";
+                $stmt = self::$pdo->prepare($sql);
+                $stmt->bindValue(":senha", $newSenha, \PDO::PARAM_STR);                
+                $stmt->bindValue(":email", $email, \PDO::PARAM_INT);
+                $stmt->execute();                
+                return $stmt;
+            } catch (PDOException $ex) {
+                throw $ex;
+            }
+        }
     }
 

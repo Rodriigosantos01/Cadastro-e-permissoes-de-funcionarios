@@ -17,7 +17,7 @@
             try {
                 self::$pdo = Conexao::connection();
                 (String) $sql = "SELECT a.nome, a.email, a.cpf_cnpj, a.cep, a.endereco, a.numero, a.complemento,
-                a.bairro, a.cidade, a.estado, b.*
+                a.bairro, a.cidade, a.estado, a.senha, b.*
                                 FROM usuarios as a
                                 LEFT JOIN permissoes as b ON b.id = a.id_permissao                
                                 WHERE a.id=:id";

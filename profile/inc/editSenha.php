@@ -19,7 +19,8 @@
             </div>    
         ';
     }else{
-        $rs = $user->select($id);
+        $rs = $user->select();
+        
         if (password_verify($password, $rs['senha'])) {
             $rs = $user->updateSenha($newPassword, $id);
 
