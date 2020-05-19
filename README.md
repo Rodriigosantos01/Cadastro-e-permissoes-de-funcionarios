@@ -39,5 +39,5 @@ arquivo: /enviar email/enviarEmail.php
 Nesse arquivo é necessário colocar informações de email tem duas variavesi reservadas para isso linha 9,10
 
 
-<b>Duvidas ou suhestões</b>
+<b>Duvidas ou sugestões</b>
 <b>Linkedin: <a href="https://www.linkedin.com/in/rodriigosantos/">in/rodriigosantos/</a></b>
