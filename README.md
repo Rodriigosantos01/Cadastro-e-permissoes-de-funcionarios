@@ -1,4 +1,4 @@
-<b>Sistema em PHP de cadastro de funcionários e permissões de funcionários</b>
+<b>Sistema em PHP de cadastro de funcionários e permissões de funcionários com recuperação de senha e envio de email de cadastro</b>
 
 Tecnologias usadas:
 
